@@ -11,7 +11,9 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $("form").submit(function(e) {
+            $("#targetUrl").focus();
+
+            $("#jpgForm").submit(function(e) {
                 e.preventDefault();
                 var redir = $("input[type=text]").val(),
                     host = "http://" + window.location.host + "/"; 
@@ -27,10 +29,10 @@
   </head>
   <body>
 
-    <form method="" enctype="multipart/form-data" action="#" target="postFrame">
-      <p>Please enter the URL of an image:</p>
-      <input type="text" size="70" placeholder="http://www.google.com/logos/2012/namorados12-hp.jpg" />
-      <input type="submit" />
+    <form id="jpgForm" method="" enctype="multipart/form-data" action="#" target="postFrame">
+      <label for='targetUrl'>Please enter the URL of an image to compress the crap out of:</label> <br/>
+      <input id='targetUrl' name='targetUrl' type="text" size="70" placeholder="http://www.google.com/logos/2012/namorados12-hp.jpg" autofocus />
+      <input type="submit" value="Go" />
     </form>
 
 
