@@ -1,0 +1,39 @@
+<!doctype html> 
+
+<html>
+  <head>
+    <title>Needs Moar JPEG</title>
+
+    <meta charset="ISO-8859-1" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function(e) {
+                e.preventDefault();
+                var redir = $("input[type=text]").val(),
+                    host = "http://" + window.location.host + "/"; 
+
+                if (redir) {
+                  window.location = host + redir;
+                } else {
+                  console.log("no redir: " + redir);
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+
+    <form method="" enctype="multipart/form-data" action="#" target="postFrame">
+      <p>Please enter the URL of an image:</p>
+      <input type="text" size="70" placeholder="http://www.google.com/logos/2012/namorados12-hp.jpg" />
+      <input type="submit" />
+    </form>
+
+
+    <iframe name="postFrame" style="display: none;"></iframe>
+  </body>
+</html>
